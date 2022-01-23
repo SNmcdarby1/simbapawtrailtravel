@@ -1,0 +1,33 @@
+{% extends "simbapawtrail/base.html" %}
+
+{% block content %}
+{% load widget_tweaks %}
+<form method="post" novalidate>
+    {% csrf_token %}
+
+    {% if pageheader %}
+    <div class="row" style="float: center">
+        <h2>{{ pageheader }}</h2>
+    </div>
+    {% endif %}
+
+    <div style="color: red;">
+        {{ form.non_field_errors }}
+    </div>
+
+    {% for field in form.visible_fields %}
+    <div class="form-group">
+        <div style="color: red;">
+            {{ field.errors }}
+        </div>
+        {{ field.label_tag }}
+        {% render_field field class="form-control" %}
+        {% if field.help_text %}
+        <small class="form-text text-muted">{{ field.help_text }}</small>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
