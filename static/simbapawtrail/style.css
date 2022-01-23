@@ -1,23 +1,23 @@
-body{
+body {
     font-family: Inconsolata, monospace;
     background-color: #fff;
     padding-bottom: 2.5em;
 }
 
-.center-body{
+.center-body {
     margin: auto;
     width: 60%;
 }
 
-mark.bear-puns{
+mark.bear-puns {
     background-color: #fcf8e3;
 }
 
-mark.trippy-color{
+mark.simba-color {
     background-color: #db8c8c;
 }
 
-#name{
+#name {
     font-size: 2em;
     color: #000;
 }
